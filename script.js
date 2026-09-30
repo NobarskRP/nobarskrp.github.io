@@ -1,11 +1,11 @@
 // ============ РОУТИНГ ПО ХЭШУ ============
 const pages = document.querySelectorAll('.page');
-const navLinks = document.querySelectorAll('.main-nav a[data-link]');
-const allLinks = document.querySelectorAll('a[data-link]');
+const navLinks = document.querySelectorAll('.main-nav a');
 
 function showPage(hash) {
-    let id = hash.replace('#', '') || 'home';
+    const id = hash.replace('#', '') || 'home';
 
+    // Скрыть все страницы, показать нужную
     let found = false;
     pages.forEach(page => {
         if (page.id === id) {
@@ -16,12 +16,13 @@ function showPage(hash) {
         }
     });
 
+    // Если не нашли — показать home
     if (!found) {
-        document.getElementById('home')?.classList.add('active');
-        id = 'home';
+        const home = document.getElementById('home');
+        if (home) home.classList.add('active');
     }
 
-    // Подсветка активной ссылки
+    // Подсветка активной ссылки в меню
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + id) {
@@ -29,8 +30,10 @@ function showPage(hash) {
         }
     });
 
+    // Прокрутка наверх
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
+    // Обновить title
     const titles = {
         home: 'Главная',
         about: 'О сервере',
@@ -42,22 +45,14 @@ function showPage(hash) {
     };
     document.title = 'NobarskRP — ' + (titles[id] || 'Игровой RP-проект');
 
+    // Закрыть мобильное меню
     document.querySelector('.main-nav')?.classList.remove('open');
 }
 
-allLinks.forEach(link => {
-    link.addEventListener('click', e => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
-            e.preventDefault();
-            history.pushState(null, '', href);
-            showPage(href);
-        }
-    });
-});
+// Слушаем изменение хэша
+window.addEventListener('hashchange', () => showPage(location.hash));
 
-window.addEventListener('popstate', () => showPage(location.hash));
-
+// Первая загрузка
 document.addEventListener('DOMContentLoaded', () => {
     showPage(location.hash || '#home');
 });
