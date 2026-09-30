@@ -11,25 +11,16 @@
 </head>
 <body>
 
-    <!-- ФОНОВЫЕ СВЕЧЕНИЯ -->
-    <div class="bg-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-    </div>
-
-    <!-- ВЕРХНЯЯ ПЛАШКА -->
+    <!-- ВЕРХНЯЯ КРАСНАЯ ПЛАШКА -->
     <div class="top-notice">
-        <strong>ВНИМАНИЕ:</strong> NobarskRP — вымышленный игровой проект. Все персонажи, фракции и события не относятся к реальному миру.
+        <strong>ВНИМАНИЕ:</strong> NobarskRP — полностью вымышленный игровой проект, созданный исключительно для игрового процесса. Все персонажи, фракции и события не относятся к реальному миру.
     </div>
 
     <!-- ШАПКА -->
     <header class="site-header">
         <div class="container header-inner">
-            <a href="#home" class="logo" data-link>
-                <div class="logo-mark">
-                    <span>N</span>
-                </div>
+            <a href="#home" data-link class="logo">
+                <div class="logo-mark">N</div>
                 <div class="logo-text">
                     <span class="logo-title">NOBARSKRP</span>
                     <span class="logo-sub">ИГРОВОЙ RP-ПРОЕКТ</span>
@@ -52,156 +43,189 @@
         </div>
     </header>
 
-    <!-- КОНТЕНТ (страницы переключаются) -->
+    <!-- КОНТЕНТ -->
     <main id="app">
 
-        <!-- ========== ГЛАВНАЯ ========== -->
+        <!-- ================= ГЛАВНАЯ ================= -->
         <section class="page" id="home">
             <div class="container">
+
+                <!-- БОЛЬШОЙ БАННЕР (замените картинку на свою) -->
                 <div class="hero-banner">
-                    <div class="hero-glow glow-red"></div>
-                    <div class="hero-glow glow-blue"></div>
-                    <div class="hero-content">
-                        <span class="hero-tag">✦ ПРИСОЕДИНЯЙСЯ К ЛУЧШИМ</span>
-                        <h1 class="hero-title">NOBARSKRP</h1>
-                        <p class="hero-sub">ИГРОВОЙ РОЛЕВОЙ ПРОЕКТ</p>
-                        <div class="hero-actions">
-                            <a href="#play" data-link class="btn-primary">НАЧАТЬ ИГРАТЬ</a>
-                            <a href="#about" data-link class="btn-ghost">УЗНАТЬ БОЛЬШЕ</a>
-                        </div>
-                    </div>
-                    <div class="hero-emblem">
-                        <div class="emblem-ring"></div>
-                        <span>★</span>
+                    <!-- ⬇️ ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА ВАШУ КАРТИНКУ БАННЕРА -->
+                    <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=1600&q=80" alt="NobarskRP" class="hero-image">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-badge">
+                        <span>✦ ПРИСОЕДИНЯЙСЯ К ЛУЧШИМ!</span>
                     </div>
                 </div>
 
-                <div class="stats-row">
-                    <div class="stat">
-                        <span class="stat-num">24/7</span>
-                        <span class="stat-label">Онлайн сервер</span>
+                <!-- БЛОК О СЕРВЕРЕ -->
+                <div class="about-grid">
+                    <div class="about-text">
+                        <span class="eyebrow">NOBARSKRP · ИГРОВОЕ СООБЩЕСТВО</span>
+                        <h2 class="big-title">НОБАРСКОЕ<br><span>СООБЩЕСТВО.</span></h2>
+                        <p class="about-desc">
+                            NobarskRP — игровое ролевое объединение, созданное для развития качественного RP, 
+                            открытого диалога и реализации идей внутри игрового процесса. Мы объединяем игроков, 
+                            которые хотят не просто наблюдать за игрой, а участвовать в ней.
+                        </p>
+                        <div class="about-buttons">
+                            <a href="#play" data-link class="btn-primary">ИГРАТЬ —</a>
+                            <a href="#rules" data-link class="btn-ghost">ИЗУЧИТЬ ПРАВИЛА</a>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-num">10+</span>
-                        <span class="stat-label">Фракций</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">1000+</span>
-                        <span class="stat-label">Игроков</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-num">∞</span>
-                        <span class="stat-label">Возможностей</span>
+
+                    <!-- КАРТОЧКА СПРАВА -->
+                    <div class="about-card">
+                        <div class="card-emblem">
+                            <img src="https://via.placeholder.com/80x80/0f2557/ffffff?text=N" alt="NobarskRP">
+                        </div>
+                        <h3>NOBARSKRP</h3>
+                        <p class="card-tag">РАЗВИТИЕ · ЕДИНСТВО · БУДУЩЕЕ</p>
+                        <div class="card-footer">
+                            <span>● Активная Организация</span>
+                            <span>ИГРОВОЙ RP-ПРОЕКТ</span>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- ========== О СЕРВЕРЕ ========== -->
+        <!-- ================= О СЕРВЕРЕ ================= -->
         <section class="page" id="about">
             <div class="container">
                 <div class="page-head">
                     <span class="eyebrow">NOBARSKRP · О ПРОЕКТЕ</span>
-                    <h2 class="page-title">О <span>СЕРВЕРЕ</span></h2>
+                    <h1 class="page-title">О <span>СЕРВЕРЕ</span></h1>
                     <p class="page-sub">Узнай, что такое NobarskRP и почему у нас стоит играть.</p>
                 </div>
 
-                <div class="about-grid">
-                    <div class="glass-card">
-                        <div class="card-icon">🎮</div>
+                <div class="cards-grid">
+                    <div class="info-card">
+                        <!-- ⬇️ Ваша картинка -->
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&q=80" alt="Качественный RP">
+                        </div>
                         <h3>Качественный RP</h3>
                         <p>Мы создаём атмосферу настоящей ролевой игры: продуманные сценарии, живые персонажи и честные правила.</p>
                     </div>
-                    <div class="glass-card">
-                        <div class="card-icon">🛡️</div>
+                    <div class="info-card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80" alt="Администрация">
+                        </div>
                         <h3>Честная администрация</h3>
                         <p>Наши администраторы всегда на связи, рассматривают жалобы и следят за порядком на сервере.</p>
                     </div>
-                    <div class="glass-card">
-                        <div class="card-icon">⚡</div>
+                    <div class="info-card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&q=80" alt="Онлайн">
+                        </div>
                         <h3>Стабильный онлайн</h3>
                         <p>Сервер работает 24/7 без лагов. Мощное железо и постоянные обновления контента.</p>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-icon">🎯</div>
-                        <h3>Много фракций</h3>
-                        <p>Государственные структуры, криминальные организации, бизнес — выбери свой путь.</p>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-icon">💎</div>
-                        <h3>Уникальный контент</h3>
-                        <p>Собственные системы, квесты, ивенты и механики, которых нет на других проектах.</p>
-                    </div>
-                    <div class="glass-card">
-                        <div class="card-icon">🤝</div>
-                        <h3>Дружное комьюнити</h3>
-                        <p>Тысячи игроков, активные Discord-каналы и постоянные встречи в игре.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== ФРАКЦИИ ========== -->
+        <!-- ================= ФРАКЦИИ ================= -->
         <section class="page" id="factions">
             <div class="container">
                 <div class="page-head">
                     <span class="eyebrow">NOBARSKRP · ОРГАНИЗАЦИИ</span>
-                    <h2 class="page-title">ФРАКЦИИ</h2>
+                    <h1 class="page-title">ФРАКЦИИ</h1>
                     <p class="page-sub">Выбери свою сторону — закон или беззаконие.</p>
                 </div>
 
                 <h3 class="group-title">🏛️ Государственные организации</h3>
                 <div class="cards-grid">
-                    <div class="glass-card small">
+                    <div class="faction-card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80" alt="МВД">
+                            <span class="faction-tag">ГОС</span>
+                        </div>
                         <h4>МВД</h4>
-                        <p>Министерство внутренних дел. Следит за порядком в городе.</p>
+                        <p>Министерство внутренних дел. Следит за порядком в городе, ловит преступников.</p>
                     </div>
-                    <div class="glass-card small">
+                    <div class="faction-card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=600&q=80" alt="ФСБ">
+                            <span class="faction-tag">ГОС</span>
+                        </div>
                         <h4>ФСБ</h4>
                         <p>Федеральная служба безопасности. Борется с особо опасными преступлениями.</p>
                     </div>
-                    <div class="glass-card small">
+                    <div class="faction-card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" alt="Армия">
+                            <span class="faction-tag">ГОС</span>
+                        </div>
                         <h4>Армия</h4>
-                        <p>Вооружённые силы. Защита города и военные операции.</p>
+                        <p>Вооружённые силы. Защита города и проведение военных операций.</p>
                     </div>
-                    <div class="glass-card small">
+                    <div class="faction-card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80" alt="Правительство">
+                            <span class="faction-tag">ГОС</span>
+                        </div>
                         <h4>Правительство</h4>
-                        <p>Управление городом, законы и бюджет.</p>
+                        <p>Управление городом, издание законов и распределение бюджета.</p>
                     </div>
-                    <div class="glass-card small">
+                    <div class="faction-card">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Больница">
+                            <span class="faction-tag">ГОС</span>
+                        </div>
                         <h4>Больница</h4>
-                        <p>Медицинская помощь жителям и сотрудникам.</p>
+                        <p>Медицинская помощь жителям и сотрудникам экстренных служб.</p>
                     </div>
                 </div>
 
                 <h3 class="group-title">💀 Криминальные организации</h3>
                 <div class="cards-grid">
-                    <div class="glass-card small danger">
+                    <div class="faction-card danger">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1541532713592-79a0317b6b77?w=600&q=80" alt="ОПГ">
+                            <span class="faction-tag red">КРИМ</span>
+                        </div>
                         <h4>ОПГ</h4>
-                        <p>Организованные преступные группировки. Контроль улиц.</p>
+                        <p>Организованные преступные группировки. Контроль улиц и нелегальный бизнес.</p>
                     </div>
-                    <div class="glass-card small danger">
+                    <div class="faction-card danger">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80" alt="Мафия">
+                            <span class="faction-tag red">КРИМ</span>
+                        </div>
                         <h4>Мафия</h4>
-                        <p>Семейные кланы с чёткой иерархией и традициями.</p>
+                        <p>Семейные кланы с чёткой иерархией и многовековыми традициями.</p>
                     </div>
-                    <div class="glass-card small danger">
+                    <div class="faction-card danger">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1493514789931-586cb221d7a7?w=600&q=80" alt="Банды">
+                            <span class="faction-tag red">КРИМ</span>
+                        </div>
                         <h4>Банды</h4>
                         <p>Уличные группировки. Быстрые деньги и опасные дела.</p>
                     </div>
-                    <div class="glass-card small danger">
+                    <div class="faction-card danger">
+                        <div class="card-img">
+                            <img src="https://images.unsplash.com/photo-1516575334481-f85287c2c82d?w=600&q=80" alt="Картель">
+                            <span class="faction-tag red">КРИМ</span>
+                        </div>
                         <h4>Картель</h4>
-                        <p>Крупные наркокартели с международными связями.</p>
+                        <p>Крупные наркокартели с международными связями и влиянием.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== ПРАВИЛА ========== -->
+        <!-- ================= ПРАВИЛА ================= -->
         <section class="page" id="rules">
             <div class="container">
                 <div class="page-head">
                     <span class="eyebrow">NOBARSKRP · СВОД ПРАВИЛ</span>
-                    <h2 class="page-title">ПРАВИЛА <span>ПРОЕКТА</span></h2>
+                    <h1 class="page-title">ПРАВИЛА <span>ПРОЕКТА</span></h1>
                     <p class="page-sub">Обязательны к прочтению каждому игроку.</p>
                 </div>
 
@@ -265,12 +289,12 @@
             </div>
         </section>
 
-        <!-- ========== ЗАКОНОДАТЕЛЬСТВО ========== -->
+        <!-- ================= ЗАКОНОДАТЕЛЬСТВО ================= -->
         <section class="page" id="legislation">
             <div class="container">
                 <div class="page-head">
                     <span class="eyebrow">NOBARSKRP · КОДЕКСЫ</span>
-                    <h2 class="page-title">ЗАКОНО<span>ДАТЕЛЬСТВО</span></h2>
+                    <h1 class="page-title">ЗАКОНО<span>ДАТЕЛЬСТВО</span></h1>
                     <p class="page-sub">Официальные кодексы игрового проекта.</p>
                 </div>
 
@@ -338,32 +362,32 @@
             </div>
         </section>
 
-        <!-- ========== РУКОВОДСТВО ========== -->
+        <!-- ================= РУКОВОДСТВО ================= -->
         <section class="page" id="team">
             <div class="container">
                 <div class="page-head">
                     <span class="eyebrow">NOBARSKRP · ADMIN TEAM</span>
-                    <h2 class="page-title">РУКО<span>ВОДСТВО</span></h2>
+                    <h1 class="page-title">РУКО<span>ВОДСТВО</span></h1>
                     <p class="page-sub">Люди, которые следят за порядком на проекте.</p>
                 </div>
 
                 <div class="cards-grid">
-                    <div class="glass-card team-card">
+                    <div class="team-card">
                         <div class="avatar">AD</div>
                         <h4>Owner</h4>
                         <p>Основатель проекта</p>
                     </div>
-                    <div class="glass-card team-card">
+                    <div class="team-card">
                         <div class="avatar">HD</div>
                         <h4>Head Admin</h4>
                         <p>Главный администратор</p>
                     </div>
-                    <div class="glass-card team-card">
+                    <div class="team-card">
                         <div class="avatar">SA</div>
                         <h4>Super Admin</h4>
                         <p>Супервайзер админов</p>
                     </div>
-                    <div class="glass-card team-card">
+                    <div class="team-card">
                         <div class="avatar">AD</div>
                         <h4>Administrator</h4>
                         <p>Администратор сервера</p>
@@ -372,23 +396,20 @@
             </div>
         </section>
 
-        <!-- ========== ИГРАТЬ ========== -->
+        <!-- ================= ИГРАТЬ ================= -->
         <section class="page" id="play">
             <div class="container">
                 <div class="play-hero">
-                    <div class="play-glow"></div>
-                    <div class="play-inner">
-                        <span class="eyebrow light">ГОТОВ НАЧАТЬ?</span>
-                        <h2>ДОБРО ПОЖАЛОВАТЬ<br>НА <span>NOBARSKRP</span></h2>
-                        <p>Подключайся к серверу и начни свою историю прямо сейчас.</p>
-                        <div class="play-buttons">
-                            <a href="#" class="btn-primary big">▶ ПОДКЛЮЧИТЬСЯ</a>
-                            <a href="#" class="btn-ghost light">📖 Правила сервера</a>
-                        </div>
-                        <div class="play-info">
-                            <div><span>IP:</span> play.nobarskrp.ru</div>
-                            <div><span>Discord:</span> discord.gg/nobarskrp</div>
-                        </div>
+                    <span class="eyebrow">ГОТОВ НАЧАТЬ?</span>
+                    <h2>ДОБРО ПОЖАЛОВАТЬ<br>НА <span>NOBARSKRP</span></h2>
+                    <p>Подключайся к серверу и начни свою историю прямо сейчас.</p>
+                    <div class="play-buttons">
+                        <a href="#" class="btn-primary big">▶ ПОДКЛЮЧИТЬСЯ</a>
+                        <a href="#rules" data-link class="btn-ghost">📖 Правила сервера</a>
+                    </div>
+                    <div class="play-info">
+                        <div><span>IP:</span> play.nobarskrp.ru</div>
+                        <div><span>Discord:</span> discord.gg/nobarskrp</div>
                     </div>
                 </div>
             </div>
