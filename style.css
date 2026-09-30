@@ -192,16 +192,16 @@ main { min-height: 60vh; }
     font-weight: 800; margin-bottom: 20px; text-transform: uppercase;
 }
 
-/* Кнопка "Присоединиться" в карточке */
+/* Кнопка "Присоединиться" в карточке (как "Играть" в шапке) */
 .btn-join {
     display: inline-block;
-    background: #0f2557;
-    color: #fff;
+    background: transparent;
+    color: #0f2557;
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 1px;
-    font-size: 11px;
-    padding: 11px 26px;
+    font-size: 12px;
+    padding: 12px 32px;
     border-radius: 30px;
     transition: all 0.25s;
     text-transform: uppercase;
@@ -211,8 +211,8 @@ main { min-height: 60vh; }
 }
 
 .btn-join:hover {
-    background: #1e3a8a;
-    border-color: #1e3a8a;
+    background: #0f2557;
+    color: #fff;
     transform: translateY(-1px);
     box-shadow: 0 10px 25px -10px rgba(15, 37, 87, 0.5);
 }
@@ -315,14 +315,15 @@ main { min-height: 60vh; }
 .faq-head { margin-bottom: 40px; }
 
 .faq-title {
-    font-size: 64px;
+    font-size: 72px;
     font-weight: 900;
-    line-height: 1;
+    line-height: 0.95;
     letter-spacing: -2px;
-    color: #1a2540;
+    color: #0f2557;
+    text-transform: uppercase;
 }
 
-.faq-title span { color: #e63946; }
+.faq-title span { color: #2563eb; }
 
 .faq-list {
     display: flex;
@@ -495,7 +496,7 @@ main { min-height: 60vh; }
     .page-title { font-size: 40px; }
     .play-hero h2 { font-size: 32px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
-    .faq-title { font-size: 48px; }
+    .faq-title { font-size: 52px; }
 }
 
 @media (max-width: 860px) {
@@ -533,7 +534,7 @@ main { min-height: 60vh; }
     .play-info { flex-direction: column; gap: 10px; }
     .group-title { font-size: 17px; }
     .header-inner { padding: 12px 16px; }
-    .faq-title { font-size: 34px; }
+    .faq-title { font-size: 40px; }
     .faq-question { padding: 18px 20px; font-size: 14px; }
     .faq-answer p { padding: 0 20px 20px; }
 }
