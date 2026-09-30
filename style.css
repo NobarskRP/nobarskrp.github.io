@@ -899,7 +899,4 @@ main { min-height: 60vh; }
     .faction-front h4 { font-size: 15px; }
     .faction-back h4 { font-size: 14px; }
     .faction-back p { font-size: 12.5px; }
-    .faction-card.flipped .faction-inner {
-    transform: rotateY(180deg);
-}
 }
