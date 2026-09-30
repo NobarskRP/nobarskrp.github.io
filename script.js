@@ -2,7 +2,6 @@
 const pages = document.querySelectorAll('.page');
 const navLinks = document.querySelectorAll('.main-nav a');
 
-// Маппинг подстраниц → их "родительская" вкладка в верхнем меню
 const parentMap = {
     // Правила
     opp: 'rules', pgo: 'rules', pko: 'rules',
@@ -29,7 +28,6 @@ const titles = {
     players: 'Игрокам',
     team: 'Руководство',
     play: 'Играть',
-    // Правила
     opp: 'Общие правила проекта',
     pgo: 'Правила государственных структур',
     pko: 'Правила криминальных структур',
@@ -42,7 +40,6 @@ const titles = {
     pr: 'Правила Рейдов',
     opks: 'Основные Правила Крим. Структур',
     pv: 'Правила Войны',
-    // Законодательство
     kod: 'Кодексы',
     fz: 'Федеральные законы',
     konst: 'Конституция РФ',
@@ -84,7 +81,6 @@ function showPage(hash) {
         document.getElementById('home')?.classList.add('active');
     }
 
-    // Подсветка активной ссылки в верхнем меню
     const activeId = parentMap[id] || id;
     navLinks.forEach(link => {
         link.classList.remove('active');
@@ -121,4 +117,57 @@ faqItems.forEach(item => {
         faqItems.forEach(i => i.classList.remove('open'));
         if (!isOpen) item.classList.add('open');
     });
+});
+
+// ============ КОПИРОВАНИЕ IP + МОДАЛЬНОЕ ОКНО ============
+const SERVER_IP = 'nobarskrp.online';
+const connectBtn = document.getElementById('connectBtn');
+const ipModal = document.getElementById('ipModal');
+const modalClose = document.getElementById('modalClose');
+
+function showIpModal() {
+    if (ipModal) ipModal.classList.add('show');
+}
+
+function hideIpModal() {
+    if (ipModal) ipModal.classList.remove('show');
+}
+
+function copyToClipboard(text) {
+    // Современный API
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+    }
+    // Fallback для старых браузеров
+    return new Promise((resolve, reject) => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand('copy');
+            resolve();
+        } catch (err) {
+            reject(err);
+        }
+        document.body.removeChild(ta);
+    });
+}
+
+connectBtn?.addEventListener('click', () => {
+    copyToClipboard(SERVER_IP)
+        .then(showIpModal)
+        .catch(() => showIpModal()); // Всё равно показываем окно, даже если копирование не удалось
+});
+
+modalClose?.addEventListener('click', hideIpModal);
+
+ipModal?.addEventListener('click', (e) => {
+    if (e.target === ipModal) hideIpModal();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') hideIpModal();
 });
