@@ -4,10 +4,8 @@ const navLinks = document.querySelectorAll('.main-nav a[data-link]');
 const allLinks = document.querySelectorAll('a[data-link]');
 
 function showPage(hash) {
-    // Убираем #, если есть
-    const id = hash.replace('#', '') || 'home';
+    let id = hash.replace('#', '') || 'home';
 
-    // Скрыть все страницы, показать нужную
     let found = false;
     pages.forEach(page => {
         if (page.id === id) {
@@ -18,13 +16,12 @@ function showPage(hash) {
         }
     });
 
-    // Если не нашли — показать home
     if (!found) {
         document.getElementById('home')?.classList.add('active');
         id = 'home';
     }
 
-    // Подсветка активной ссылки в меню
+    // Подсветка активной ссылки
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + id) {
@@ -32,10 +29,8 @@ function showPage(hash) {
         }
     });
 
-    // Прокрутка наверх
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Обновить title
     const titles = {
         home: 'Главная',
         about: 'О сервере',
@@ -47,11 +42,9 @@ function showPage(hash) {
     };
     document.title = 'NobarskRP — ' + (titles[id] || 'Игровой RP-проект');
 
-    // Закрыть мобильное меню
     document.querySelector('.main-nav')?.classList.remove('open');
 }
 
-// Обработка кликов по всем ссылкам с data-link
 allLinks.forEach(link => {
     link.addEventListener('click', e => {
         const href = link.getAttribute('href');
@@ -63,15 +56,13 @@ allLinks.forEach(link => {
     });
 });
 
-// Обработка кнопок назад/вперёд в браузере
 window.addEventListener('popstate', () => showPage(location.hash));
 
-// Первая загрузка
 document.addEventListener('DOMContentLoaded', () => {
     showPage(location.hash || '#home');
 });
 
-// ============ МОБИЛЬНОЕ МЕНЮ ============
+// Мобильное меню
 document.getElementById('burger')?.addEventListener('click', () => {
     document.querySelector('.main-nav')?.classList.toggle('open');
 });
