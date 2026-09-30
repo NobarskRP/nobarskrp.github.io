@@ -113,18 +113,3 @@ connectBtn?.addEventListener('click', () => {
 modalClose?.addEventListener('click', hideIpModal);
 ipModal?.addEventListener('click', (e) => { if (e.target === ipModal) hideIpModal(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideIpModal(); });
-
-// ============ FLIP-КАРТОЧКИ ФРАКЦИЙ (для тач-устройств) ============
-const isTouch = window.matchMedia('(hover: none)').matches;
-
-if (isTouch) {
-    document.querySelectorAll('.faction-card').forEach(card => {
-        card.addEventListener('click', () => {
-            // Закрыть другие открытые карточки
-            document.querySelectorAll('.faction-card.flipped').forEach(c => {
-                if (c !== card) c.classList.remove('flipped');
-            });
-            card.classList.toggle('flipped');
-        });
-    });
-}
