@@ -60,7 +60,7 @@ body {
 .logo-sub { font-size: 10px; letter-spacing: 1.5px; color: #6b7280; text-transform: uppercase; }
 
 /* ================= МЕНЮ ================= */
-.main-nav ul { display: flex; align-items: center; gap: 20px; list-style: none; }
+.main-nav ul { display: flex; align-items: center; gap: 18px; list-style: none; }
 
 .main-nav a {
     text-decoration: none; font-size: 11px; font-weight: 700;
@@ -279,6 +279,98 @@ main { min-height: 60vh; }
 
 .rules-list a:hover { color: #dc2626; padding-left: 6px; }
 
+/* ================= FAQ (ИГРОКАМ) ================= */
+.faq-head { margin-bottom: 40px; }
+
+.faq-title {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: #1a2540;
+}
+
+.faq-title span { color: #e63946; }
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 1150px;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #eef0f4;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px -8px rgba(15, 37, 87, 0.08);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.faq-item:hover {
+    border-color: #dbeafe;
+    box-shadow: 0 10px 30px -12px rgba(15, 37, 87, 0.18);
+}
+
+.faq-item.open {
+    border-color: #dbeafe;
+    box-shadow: 0 15px 40px -15px rgba(15, 37, 87, 0.2);
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a2540;
+    text-align: left;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: color 0.2s;
+}
+
+.faq-question:hover { color: #0f2557; }
+
+.faq-icon {
+    font-size: 22px;
+    font-weight: 300;
+    color: #2563eb;
+    flex-shrink: 0;
+    transition: transform 0.3s, color 0.2s;
+    line-height: 1;
+    width: 24px;
+    text-align: center;
+}
+
+.faq-item.open .faq-icon {
+    transform: rotate(45deg);
+    color: #e63946;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+.faq-item.open .faq-answer {
+    max-height: 400px;
+}
+
+.faq-answer p {
+    padding: 0 28px 24px;
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
 /* ================= БЛОК ИГРАТЬ ================= */
 .play-hero {
     position: relative; background: linear-gradient(135deg, #0f2557 0%, #1e3a8a 100%);
@@ -371,6 +463,7 @@ main { min-height: 60vh; }
     .page-title { font-size: 40px; }
     .play-hero h2 { font-size: 32px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
+    .faq-title { font-size: 48px; }
 }
 
 @media (max-width: 860px) {
@@ -383,7 +476,7 @@ main { min-height: 60vh; }
         max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
     }
 
-    .main-nav.open { max-height: 500px; }
+    .main-nav.open { max-height: 600px; }
 
     .main-nav ul { flex-direction: column; align-items: stretch; padding: 16px; gap: 4px; }
 
@@ -408,4 +501,7 @@ main { min-height: 60vh; }
     .play-info { flex-direction: column; gap: 10px; }
     .group-title { font-size: 17px; }
     .header-inner { padding: 12px 16px; }
+    .faq-title { font-size: 34px; }
+    .faq-question { padding: 18px 20px; font-size: 14px; }
+    .faq-answer p { padding: 0 20px 20px; }
 }
