@@ -17,8 +17,6 @@ body {
     padding: 0 24px;
 }
 
-img { max-width: 100%; display: block; }
-
 /* ================= ВЕРХНЯЯ ПЛАШКА ================= */
 .top-notice {
     background: #fef2f2;
@@ -204,21 +202,15 @@ main { min-height: 60vh; }
     margin: 0 auto;
 }
 
-/* ================= ГЛАВНАЯ — БАННЕР ================= */
+/* ================= ГЛАВНАЯ — БАННЕР (без картинки) ================= */
 .hero-banner {
     position: relative;
     border-radius: 22px;
     overflow: hidden;
     min-height: 380px;
     margin-bottom: 70px;
+    background: linear-gradient(120deg, #0a0a12 0%, #14142a 50%, #20080a 100%);
     box-shadow: 0 30px 60px -25px rgba(15, 37, 87, 0.4);
-}
-
-.hero-image {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    display: block;
 }
 
 .hero-overlay {
@@ -249,8 +241,6 @@ main { min-height: 60vh; }
     gap: 60px;
     align-items: center;
 }
-
-.about-text { }
 
 .big-title {
     font-size: 72px;
@@ -347,10 +337,16 @@ main { min-height: 60vh; }
     border: 1px solid #eef0f4;
 }
 
-.card-emblem img {
+.card-emblem-inner {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background: linear-gradient(135deg, #0f2557, #2563eb);
+    color: #fff;
+    font-weight: 900;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-card h3 {
@@ -394,14 +390,11 @@ main { min-height: 60vh; }
     background: #fff;
     border: 1px solid #eef0f4;
     border-radius: 18px;
-    overflow: hidden;
+    padding: 28px;
     transition: all 0.3s;
     display: flex;
     flex-direction: column;
 }
-
-.info-card,
-.team-card { padding: 0 0 24px; }
 
 .info-card:hover,
 .faction-card:hover,
@@ -411,68 +404,31 @@ main { min-height: 60vh; }
     border-color: #dbeafe;
 }
 
-.card-img {
-    position: relative;
-    height: 180px;
-    overflow: hidden;
-    background: #f3f4f6;
-}
-
-.card-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.info-card:hover .card-img img,
-.faction-card:hover .card-img img {
-    transform: scale(1.08);
-}
-
-.faction-tag {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    background: #0f2557;
-    color: #fff;
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    padding: 5px 12px;
-    border-radius: 20px;
-    z-index: 2;
-}
-
-.faction-tag.red { background: #dc2626; }
-
-.info-card h3,
 .faction-card h4,
-.team-card h4 {
+.team-card h4,
+.info-card h3 {
     font-size: 18px;
     color: #0f2557;
-    margin: 20px 24px 8px;
+    margin-bottom: 8px;
     font-weight: 800;
 }
 
-.info-card p,
 .faction-card p,
-.team-card p {
+.team-card p,
+.info-card p {
     color: #6b7280;
     font-size: 14px;
-    margin: 0 24px;
     line-height: 1.5;
 }
 
 .faction-card.danger { border-color: #fee2e2; }
 .faction-card.danger:hover { border-color: #fecaca; box-shadow: 0 25px 50px -25px rgba(220, 38, 38, 0.3); }
 
-.team-card { text-align: center; padding: 30px 24px; }
-.team-card h4, .team-card p { margin-left: 0; margin-right: 0; }
+.team-card { text-align: center; align-items: center; }
 
 .avatar {
     width: 76px; height: 76px;
-    margin: 0 auto 16px;
+    margin-bottom: 16px;
     border-radius: 50%;
     background: linear-gradient(135deg, #0f2557, #2563eb);
     color: #fff;
@@ -709,7 +665,6 @@ main { min-height: 60vh; }
 @media (max-width: 600px) {
     .page { padding: 24px 0 60px; }
     .hero-banner { min-height: 260px; }
-    .hero-image { height: 260px; }
     .hero-badge { top: 16px; right: 16px; font-size: 10px; padding: 6px 12px; }
     .big-title { font-size: 38px; }
     .page-title { font-size: 30px; }
