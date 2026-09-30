@@ -3,106 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NobarskRP | Правила и Кодексы</title>
+    <title>Официальный Форум Нобарска</title>т</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Форум Нобарска</h1>
-        <p>Правила и Законодательство проекта</p>
+
+    <!-- ВЕРХНЯЯ КРАСНАЯ ПЛАШКА -->
+    <div class="top-notice">
+        <strong>ВНИМАНИЕ:</strong> NobarskRP — полностью вымышленный игровой проект, созданный исключительно для игры. Все персонажи, фракции, документы и события не относятся к реальному миру.
+    </div>
+
+    <!-- ШАПКА -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#home" class="logo">
+                <div class="logo-mark">N</div>
+                <div class="logo-text">
+                    <span class="logo-title">Нобарск</span>
+                    <span class="logo-sub">ИГРОВОЙ RP-ПРОЕКТ</span>
+                </div>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home" class="active">Главная</a></li>
+                    <li><a href="#about">О сервере</a></li>
+                    <li><a href="#team">Руководство</a></li>
+                    <li><a href="#factions">Фракции</a></li>
+                    <li><a href="#rules">Правила</a></li>
+                    <li><a href="#legislation">Законодательство</a></li>
+                    <li><a href="#play" class="btn-outline">Играть</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#project-rules">Правила Проекта</a></li>
-            <li><a href="#legislation">Законодательство</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <!-- Секция "Правила Проекта" -->
-        <section id="project-rules">
-            <h2>Правила Проекта</h2>
-            
-            <!-- Подкатегория 1 -->
-            <div class="category">
-                <h3>Основные Правила Проекта</h3>
-                <div class="subcategory">
-                    <h4>Общие правила</h4>
-                    <ul>
-                        <li><strong>Пункт 1.1:</strong> Текст правила...</li>
-                        <li><strong>Пункт 1.2:</strong> Текст правила...</li>
-                    </ul>
+    <!-- ГЛАВНЫЙ БАННЕР -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-banner">
+                <div class="hero-glow glow-red"></div>
+                <div class="hero-glow glow-blue"></div>
+                <div class="hero-content">
+                    <span class="hero-tag">ПРИСОЕДИНЯЙСЯ К ЛУЧШИМ!</span>
+                    <h2>НОБАРСК</h2>
+                    <p>ИГРОВОЙ РОЛЕВОЙ ПРОЕКТ</p>
+                    <div class="hero-emblem">★</div>
                 </div>
-                <div class="subcategory">
-                    <h4>Правила лидеров</h4>
-                    <ul>
-                        <li><strong>Пункт 2.1:</strong> Текст правила для лидеров...</li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- О СЕРВЕРЕ -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <span class="eyebrow">NOBARSKRP · ИГРОВОЕ СООБЩЕСТВО</span>
+                <h2 class="big-title">НОБАРСКОЕ<br><span>СООБЩЕСТВО.</span></h2>
+                <p class="about-desc">
+                    NobarskRP — игровое ролевое объединение, созданное для развития качественного RP, 
+                    открытого диалога и реализации идей внутри игрового процесса. Мы объединяем игроков, 
+                    которые хотят не просто наблюдать за игрой, а участвовать в ней.
+                </p>
+                <div class="about-buttons">
+                    <a href="#play" class="btn-primary">ИГРАТЬ —</a>
+                    <a href="#rules" class="btn-ghost">ИЗУЧИТЬ ПРАВИЛА</a>
                 </div>
             </div>
 
-            <!-- Подкатегория 2 -->
-            <div class="category">
-                <h3>Правила Государственных Организаций</h3>
-                <div class="subcategory">
-                    <h4>Для сотрудников МВД</h4>
+            <div class="about-card">
+                <div class="card-glow"></div>
+                <div class="card-emblem">★</div>
+                <h3>NOBARSKRP</h3>
+                <p class="card-tag"></p>
+                <div class="card-footer">
+                    <span>ИГРОВОЙ RP-ПРОЕКТ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ФРАКЦИИ -->
+    <section class="section-block" id="factions">
+        <div class="container">
+            <h2 class="section-title">Фракции</h2>
+            <p class="section-sub">Государственные и криминальные организации проекта NobarskRP.</p>
+            <div class="cards-grid">
+                <div class="info-card">
+                    <h3>Государственные</h3>
+                    <p>МВД, ФСБ, Армия, Правительство, Больница.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Криминальные</h3>
+                    <p>ОПГ, мафии, банды, картели.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРАВИЛА -->
+    <section class="section-block alt" id="rules">
+        <div class="container">
+            <h2 class="section-title">Правила</h2>
+            <p class="section-sub">Правила проекта, разделённые по категориям.</p>
+
+            <div class="rules-grid">
+                <div class="rule-category">
+                    <h3>Правила Проекта</h3>
                     <ul>
-                        <li><strong>Пункт 3.1:</strong> Текст правила...</li>
+                        <li><a href="#">Основные правила проекта</a></li>
+                        <li><a href="#">Правила лидеров</a></li>
+                        <li><a href="#">Правила государственных организаций</a></li>
+                        <li><a href="#">Правила криминальных организаций</a></li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Подкатегория 3 -->
-            <div class="category">
-                <h3>Правила Криминальных Организаций</h3>
-                <div class="subcategory">
-                    <h4>Общие правила для ОПГ</h4>
+    <!-- ЗАКОНОДАТЕЛЬСТВО -->
+    <section class="section-block" id="legislation">
+        <div class="container">
+            <h2 class="section-title">Законодательство</h2>
+            <p class="section-sub">Кодексы и нормативные акты проекта.</p>
+
+            <div class="rules-grid">
+                <div class="rule-category">
+                    <h3>Кодексы</h3>
                     <ul>
-                        <li><strong>Пункт 4.1:</strong> Текст правила...</li>
+                        <li><a href="#">Уголовный кодекс</a></li>
+                        <li><a href="#">Административный кодекс</a></li>
+                        <li><a href="#">Гражданский кодекс</a></li>
+                        <li><a href="#">Дорожный кодекс</a></li>
+                        <li><a href="#">Трудовой кодекс</a></li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Секция "Законодательство" -->
-        <section id="legislation">
-            <h2>Законодательство</h2>
-            
-            <div class="category">
-                <h3>Уголовный Кодекс</h3>
-                <div class="subcategory">
-                    <h4>Глава 1. Преступления против личности</h4>
-                    <ul>
-                        <li><strong>Статья 1.1:</strong> Текст статьи...</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- РУКОВОДСТВО -->
+    <section class="section-block alt" id="team">
+        <div class="container">
+            <h2 class="section-title">Руководство</h2>
+            <p class="section-sub">Администрация проекта NobarskRP.</p>
+        </div>
+    </section>
 
-            <div class="category">
-                <h3>Административный Кодекс</h3>
-                <div class="subcategory">
-                    <h4>Глава 1. Общие положения</h4>
-                    <ul>
-                        <li><strong>Статья 1.1:</strong> Текст статьи...</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- ИГРАТЬ -->
+    <section class="play-block" id="play">
+        <div class="container play-inner">
+            <h2>Готов играть?</h2>
+            <p>Подключайся к NobarskRP и начни свою историю.</p>
+            <a href="#" class="btn-primary big">ИГРАТЬ —</a>
+        </div>
+    </section>
 
-            <div class="category">
-                <h3>Гражданский Кодекс</h3>
-                <div class="subcategory">
-                    <h4>Глава 1. Право собственности</h4>
-                    <ul>
-                        <li><strong>Статья 1.1:</strong> Текст статьи...</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2026 NobarskRP. Все права защищены.</p>
+    <!-- ПОДВАЛ -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 NobarskRP. Все права защищены. Проект является вымышленным и создан исключительно для игрового процесса.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
