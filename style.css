@@ -323,12 +323,10 @@ main { min-height: 60vh; }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.3fr repeat(3, 1fr);
+    grid-template-columns: 1.5fr 1fr 1fr;
     gap: 40px;
     margin-bottom: 50px;
 }
-
-.footer-brand { }
 
 .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
 
@@ -342,15 +340,13 @@ main { min-height: 60vh; }
 .footer-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
 
 .footer-logo-title { font-weight: 900; font-size: 15px; letter-spacing: 1px; color: #fff; }
-
 .footer-logo-sub { font-size: 9px; letter-spacing: 1.5px; color: #66778c; }
 
-.footer-desc { color: #66778c; font-size: 11px; max-width: 350px; line-height: 1.6; }
+.footer-desc { color: #66778c; font-size: 12px; max-width: 350px; line-height: 1.6; }
 
 .footer-col h4 {
     font-size: 10px; letter-spacing: 2px; color: #fff;
-    text-transform: uppercase; margin-bottom: 15px;
-    font-weight: 800;
+    text-transform: uppercase; margin-bottom: 15px; font-weight: 800;
 }
 
 .footer-col a {
