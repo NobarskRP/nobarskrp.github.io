@@ -4,25 +4,20 @@ const navLinks = document.querySelectorAll('.main-nav a');
 
 // Маппинг подстраниц → их "родительская" вкладка в верхнем меню
 const parentMap = {
-    // Правила (все уровни)
-    opp: 'rules',
-    pgo: 'rules',
-    pko: 'rules',
-    pp: 'rules',
-    piol: 'rules',
-    ps: 'rules',
-    pa: 'rules',
-    opgs: 'rules',
-    pd: 'rules',
-    pr: 'rules',
-    opks: 'rules',
-    pv: 'rules',
+    // Правила
+    opp: 'rules', pgo: 'rules', pko: 'rules',
+    pp: 'rules', piol: 'rules', ps: 'rules', pa: 'rules',
+    opgs: 'rules', pd: 'rules', pr: 'rules',
+    opks: 'rules', pv: 'rules',
     // Законодательство
-    uk: 'legislation',
-    ak: 'legislation',
-    gk: 'legislation',
-    dk: 'legislation',
-    tk: 'legislation'
+    kod: 'legislation', fz: 'legislation', konst: 'legislation',
+    uk: 'legislation', koap: 'legislation', tk: 'legislation',
+    upk: 'legislation', gk: 'legislation',
+    fkzopr: 'legislation', fkzoss: 'legislation', fzoo: 'legislation',
+    fzofsb: 'legislation', fzop: 'legislation', fzofso: 'legislation',
+    fzod: 'legislation', fzogt: 'legislation', fzsmi: 'legislation',
+    fzokd: 'legislation', fzooz: 'legislation', fzoob: 'legislation',
+    fzoad: 'legislation', fzogs: 'legislation'
 };
 
 const titles = {
@@ -34,11 +29,10 @@ const titles = {
     players: 'Игрокам',
     team: 'Руководство',
     play: 'Играть',
-    // Уровень 2
+    // Правила
     opp: 'Общие правила проекта',
     pgo: 'Правила государственных структур',
     pko: 'Правила криминальных структур',
-    // Уровень 3
     pp: 'Правила Проекта',
     piol: 'Правила и Обязанности Лидеров',
     ps: 'Правила Семей',
@@ -49,11 +43,28 @@ const titles = {
     opks: 'Основные Правила Крим. Структур',
     pv: 'Правила Войны',
     // Законодательство
-    uk: 'Уголовный кодекс',
-    ak: 'Административный кодекс',
-    gk: 'Гражданский кодекс',
-    dk: 'Дорожный кодекс',
-    tk: 'Трудовой кодекс'
+    kod: 'Кодексы',
+    fz: 'Федеральные законы',
+    konst: 'Конституция РФ',
+    uk: 'Уголовный Кодекс',
+    koap: 'КоАП',
+    tk: 'Трудовой Кодекс',
+    upk: 'УПК',
+    gk: 'Гражданский Кодекс',
+    fkzopr: 'ФКЗ «О Правительстве»',
+    fkzoss: 'ФКЗ «О Судебной системе»',
+    fzoo: 'ФЗ «Об Оружии»',
+    fzofsb: 'ФЗ «О ФСБ»',
+    fzop: 'ФЗ «О Полиции»',
+    fzofso: 'ФЗ «О ФСО»',
+    fzod: 'ФЗ «О Документообороте»',
+    fzogt: 'ФЗ «О Государственной тайне»',
+    fzsmi: 'ФЗ «О СМИ»',
+    fzokd: 'ФЗ «О Коммерческой деятельности»',
+    fzooz: 'ФЗ «Об Охране здоровья»',
+    fzoob: 'ФЗ «Об Обороне»',
+    fzoad: 'ФЗ «Об Адвокатской деятельности»',
+    fzogs: 'ФЗ «О Государственной службе»'
 };
 
 function showPage(hash) {
@@ -70,13 +81,11 @@ function showPage(hash) {
     });
 
     if (!found) {
-        const home = document.getElementById('home');
-        if (home) home.classList.add('active');
+        document.getElementById('home')?.classList.add('active');
     }
 
     // Подсветка активной ссылки в верхнем меню
     const activeId = parentMap[id] || id;
-
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + activeId) {
