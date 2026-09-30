@@ -291,6 +291,7 @@ main { min-height: 60vh; }
 
 /* ================= КАТЕГОРИИ ПРАВИЛ (КЛИКАБЕЛЬНЫЕ) ================= */
 .rules-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+.rules-layout-3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 
 .rules-category {
     display: block;
