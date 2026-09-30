@@ -96,6 +96,7 @@ main { min-height: 60vh; }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
 
 .page-head { text-align: center; margin-bottom: 50px; }
+.page-head.left { text-align: left; margin-bottom: 32px; }
 
 .eyebrow {
     display: inline-block; font-size: 11px; font-weight: 700;
@@ -110,6 +111,30 @@ main { min-height: 60vh; }
 .page-title span { color: #2563eb; }
 
 .page-sub { color: #6b7280; font-size: 15px; max-width: 500px; margin: 0 auto; }
+
+/* ================= ССЫЛКА НАЗАД ================= */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid #eef0f4;
+    background: #fff;
+    margin-bottom: 24px;
+    transition: all 0.25s;
+}
+
+.back-link:hover {
+    color: #0f2557;
+    border-color: #dbeafe;
+    background: #f8fafc;
+    transform: translateX(-3px);
+}
 
 /* ================= ГЛАВНАЯ — БАННЕР ================= */
 .hero-banner {
@@ -192,7 +217,6 @@ main { min-height: 60vh; }
     font-weight: 800; margin-bottom: 20px; text-transform: uppercase;
 }
 
-/* Кнопка "Присоединиться" в карточке (как "Играть" в шапке) */
 .btn-join {
     display: inline-block;
     background: transparent;
@@ -265,17 +289,26 @@ main { min-height: 60vh; }
 }
 .group-title:first-of-type { margin-top: 0; }
 
-/* ================= СЕТКА ПРАВИЛ ================= */
+/* ================= КАТЕГОРИИ ПРАВИЛ (КЛИКАБЕЛЬНЫЕ) ================= */
 .rules-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
 
 .rules-category {
-    background: #fff; border: 1px solid #eef0f4; border-radius: 18px;
-    padding: 26px; transition: all 0.3s;
+    display: block;
+    background: #fff;
+    border: 1px solid #eef0f4;
+    border-radius: 18px;
+    padding: 26px;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
 }
 
 .rules-category:hover {
     box-shadow: 0 20px 40px -20px rgba(15, 37, 87, 0.25);
-    border-color: #dbeafe; transform: translateY(-3px);
+    border-color: #dbeafe;
+    transform: translateY(-3px);
 }
 
 .cat-head {
@@ -296,20 +329,129 @@ main { min-height: 60vh; }
 
 .rules-list { list-style: none; }
 
-.rules-list li { padding: 8px 0; border-bottom: 1px solid #f9fafb; }
+.rules-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f9fafb;
+    color: #4b5563;
+    font-size: 14px;
+    padding-left: 20px;
+    position: relative;
+}
+
 .rules-list li:last-child { border-bottom: none; }
 
-.rules-list a {
-    color: #4b5563; text-decoration: none; font-size: 14px;
-    display: block; transition: all 0.25s; padding: 4px 0;
+.rules-list li::before {
+    content: '→';
+    color: #dc2626;
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
 }
 
-.rules-list a::before {
-    content: '→ '; color: #dc2626; opacity: 0.6;
-    margin-right: 6px; display: inline-block; transition: transform 0.25s;
+.cat-open {
+    display: inline-block;
+    margin-top: 16px;
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: transform 0.25s;
 }
 
-.rules-list a:hover { color: #dc2626; padding-left: 6px; }
+.rules-category:hover .cat-open {
+    transform: translateX(4px);
+}
+
+/* ================= СТРАНИЦА ПРАВИЛА (ПОДСТРАНИЦА) ================= */
+.rules-description {
+    display: flex;
+    gap: 22px;
+    background: #f0f6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 28px;
+    align-items: flex-start;
+}
+
+.desc-icon {
+    font-size: 32px;
+    width: 62px; height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -10px rgba(15, 37, 87, 0.25);
+    flex-shrink: 0;
+}
+
+.desc-body h3 {
+    font-size: 18px;
+    color: #0f2557;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.desc-body p {
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.desc-body p:last-child { margin-bottom: 0; }
+
+.rules-body {
+    background: #fff;
+    border: 1px solid #eef0f4;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 20px 60px -30px rgba(15, 37, 87, 0.15);
+}
+
+.rules-body h3 {
+    font-size: 22px;
+    color: #0f2557;
+    font-weight: 800;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #f3f4f6;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.rules-body h4 {
+    font-size: 16px;
+    color: #0f2557;
+    font-weight: 800;
+    margin-top: 22px;
+    margin-bottom: 8px;
+    padding-left: 14px;
+    border-left: 3px solid #dc2626;
+}
+
+.rules-body h4:first-of-type { margin-top: 0; }
+
+.rules-body p {
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.rules-body .placeholder {
+    background: #fffbeb;
+    border: 1px dashed #fbbf24;
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: #92400e;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
 
 /* ================= FAQ (ИГРОКАМ) ================= */
 .faq-head { margin-bottom: 40px; }
@@ -497,6 +639,7 @@ main { min-height: 60vh; }
     .play-hero h2 { font-size: 32px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .faq-title { font-size: 52px; }
+    .rules-description { flex-direction: column; }
 }
 
 @media (max-width: 860px) {
@@ -537,4 +680,7 @@ main { min-height: 60vh; }
     .faq-title { font-size: 40px; }
     .faq-question { padding: 18px 20px; font-size: 14px; }
     .faq-answer p { padding: 0 20px 20px; }
+    .rules-body { padding: 22px; }
+    .rules-description { padding: 20px; }
+    .desc-icon { width: 52px; height: 52px; font-size: 26px; }
 }
