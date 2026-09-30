@@ -5,7 +5,6 @@ const navLinks = document.querySelectorAll('.main-nav a');
 function showPage(hash) {
     const id = hash.replace('#', '') || 'home';
 
-    // Скрыть все страницы, показать нужную
     let found = false;
     pages.forEach(page => {
         if (page.id === id) {
@@ -16,13 +15,11 @@ function showPage(hash) {
         }
     });
 
-    // Если не нашли — показать home
     if (!found) {
         const home = document.getElementById('home');
         if (home) home.classList.add('active');
     }
 
-    // Подсветка активной ссылки в меню
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + id) {
@@ -30,34 +27,48 @@ function showPage(hash) {
         }
     });
 
-    // Прокрутка наверх
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    // Обновить title
     const titles = {
         home: 'Главная',
         about: 'О сервере',
         factions: 'Фракции',
         rules: 'Правила',
         legislation: 'Законодательство',
+        players: 'Игрокам',
         team: 'Руководство',
         play: 'Играть'
     };
     document.title = 'NobarskRP — ' + (titles[id] || 'Игровой RP-проект');
 
-    // Закрыть мобильное меню
     document.querySelector('.main-nav')?.classList.remove('open');
 }
 
-// Слушаем изменение хэша
 window.addEventListener('hashchange', () => showPage(location.hash));
 
-// Первая загрузка
 document.addEventListener('DOMContentLoaded', () => {
     showPage(location.hash || '#home');
 });
 
-// Мобильное меню
+// ============ МОБИЛЬНОЕ МЕНЮ ============
 document.getElementById('burger')?.addEventListener('click', () => {
     document.querySelector('.main-nav')?.classList.toggle('open');
+});
+
+// ============ FAQ АККОРДЕОН ============
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        // Закрыть все
+        faqItems.forEach(i => i.classList.remove('open'));
+
+        // Если был закрыт — открыть этот
+        if (!isOpen) {
+            item.classList.add('open');
+        }
+    });
 });
