@@ -258,56 +258,18 @@ main { min-height: 60vh; }
 /* ================= СЕТКА КАРТОЧЕК ================= */
 .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
 
-.info-card, .faction-card, .team-card {
+.info-card, .team-card {
     background: #fff; border: 1px solid #eef0f4; border-radius: 18px;
     padding: 28px; transition: all 0.3s; display: flex; flex-direction: column;
 }
 
-.info-card:hover, .faction-card:hover, .team-card:hover {
+.info-card:hover, .team-card:hover {
     box-shadow: 0 25px 50px -25px rgba(15, 37, 87, 0.35);
     transform: translateY(-4px); border-color: #dbeafe;
 }
 
-.faction-card h4, .team-card h4, .info-card h3 { font-size: 18px; color: #0f2557; margin-bottom: 8px; font-weight: 800; }
-.faction-card p, .team-card p, .info-card p { color: #6b7280; font-size: 14px; line-height: 1.5; }
-
-.faction-card.danger { border-color: #fee2e2; }
-.faction-card.danger:hover { border-color: #fecaca; box-shadow: 0 25px 50px -25px rgba(220, 38, 38, 0.3); }
-
-/* ================= ИКОНКА ФРАКЦИИ ================= */
-.faction-icon {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 18px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, #eff6ff, #dbeafe);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    line-height: 1;
-    box-shadow: 0 10px 25px -10px rgba(15, 37, 87, 0.25);
-    border: 1px solid #dbeafe;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.faction-card:hover .faction-icon {
-    transform: scale(1.08) rotate(-3deg);
-    box-shadow: 0 15px 30px -10px rgba(15, 37, 87, 0.35);
-}
-
-.faction-card.danger .faction-icon {
-    background: linear-gradient(135deg, #fef2f2, #fee2e2);
-    border-color: #fecaca;
-    box-shadow: 0 10px 25px -10px rgba(220, 38, 38, 0.25);
-}
-
-.faction-card.danger:hover .faction-icon {
-    box-shadow: 0 15px 30px -10px rgba(220, 38, 38, 0.35);
-}
-
-.faction-card h4 { text-align: center; }
-.faction-card p { text-align: center; }
+.team-card h4, .info-card h3 { font-size: 18px; color: #0f2557; margin-bottom: 8px; font-weight: 800; }
+.team-card p, .info-card p { color: #6b7280; font-size: 14px; line-height: 1.5; }
 
 .team-card { text-align: center; align-items: center; }
 
@@ -317,6 +279,135 @@ main { min-height: 60vh; }
     font-weight: 900; font-size: 22px; display: flex; align-items: center;
     justify-content: center; box-shadow: 0 12px 30px -10px rgba(15, 37, 87, 0.5);
 }
+
+/* ================= ФРАКЦИИ — FLIP КАРТОЧКИ ================= */
+.faction-card {
+    position: relative;
+    height: 260px;
+    perspective: 1400px;
+    cursor: pointer;
+}
+
+.faction-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.faction-card:hover .faction-inner {
+    transform: rotateY(180deg);
+}
+
+.faction-front,
+.faction-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 28px 24px;
+    overflow: hidden;
+    border: 1px solid #eef0f4;
+}
+
+/* --- ПЕРЕДНЯЯ --- */
+.faction-front {
+    background: linear-gradient(160deg, #ffffff 0%, #f4f8ff 100%);
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    box-shadow: 0 15px 40px -25px rgba(15, 37, 87, 0.3);
+}
+
+.faction-front .faction-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    line-height: 1;
+    box-shadow: 0 12px 28px -12px rgba(15, 37, 87, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.faction-front h4 {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0f2557;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin: 0;
+}
+
+/* --- ЗАДНЯЯ --- */
+.faction-back {
+    background: linear-gradient(135deg, #0f2557 0%, #1e3a8a 100%);
+    color: #fff;
+    transform: rotateY(180deg);
+    justify-content: center;
+    text-align: center;
+    border-color: #1e3a8a;
+    position: relative;
+}
+
+.faction-back::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent 70%);
+    pointer-events: none;
+}
+
+.faction-back h4 {
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+}
+
+.faction-back p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #c7d2fe;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- DANGER --- */
+.faction-card.danger .faction-front {
+    background: linear-gradient(160deg, #ffffff 0%, #fef6f6 100%);
+}
+
+.faction-card.danger .faction-front .faction-icon {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    box-shadow: 0 12px 28px -12px rgba(220, 38, 38, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.faction-card.danger .faction-back {
+    background: linear-gradient(135deg, #450a0a 0%, #7f1d1d 100%);
+    border-color: #7f1d1d;
+}
+
+.faction-card.danger .faction-back::before {
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.45), transparent 70%);
+}
+
+.faction-card.danger .faction-back p { color: #fecaca; }
 
 /* ================= ГРУППЫ ФРАКЦИЙ ================= */
 .group-title {
@@ -479,16 +570,6 @@ main { min-height: 60vh; }
     font-size: 15px;
     line-height: 1.7;
     margin-bottom: 14px;
-}
-
-.rules-body .placeholder {
-    background: #fffbeb;
-    border: 1px dashed #fbbf24;
-    border-radius: 12px;
-    padding: 14px 18px;
-    color: #92400e;
-    font-size: 13px;
-    margin-bottom: 22px;
 }
 
 /* ================= FAQ (ИГРОКАМ) ================= */
@@ -813,5 +894,9 @@ main { min-height: 60vh; }
     .modal-box { padding: 34px 24px 26px; }
     .modal-title { font-size: 18px; }
     .modal-icon { width: 62px; height: 62px; font-size: 30px; }
-    .faction-icon { width: 60px; height: 60px; font-size: 30px; }
+    .faction-card { height: 240px; }
+    .faction-front .faction-icon { width: 72px; height: 72px; font-size: 34px; border-radius: 18px; }
+    .faction-front h4 { font-size: 15px; }
+    .faction-back h4 { font-size: 14px; }
+    .faction-back p { font-size: 12.5px; }
 }
