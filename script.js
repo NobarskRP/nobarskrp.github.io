@@ -2,12 +2,22 @@
 const pages = document.querySelectorAll('.page');
 const navLinks = document.querySelectorAll('.main-nav a');
 
-// Маппинг подстраниц на их "родительские" вкладки в меню
+// Маппинг подстраниц → их "родительская" вкладка в верхнем меню
 const parentMap = {
+    // Правила (все уровни)
     opp: 'rules',
-    leaders: 'rules',
-    gos: 'rules',
-    krim: 'rules',
+    pgo: 'rules',
+    pko: 'rules',
+    pp: 'rules',
+    piol: 'rules',
+    ps: 'rules',
+    pa: 'rules',
+    opgs: 'rules',
+    pd: 'rules',
+    pr: 'rules',
+    opks: 'rules',
+    pv: 'rules',
+    // Законодательство
     uk: 'legislation',
     ak: 'legislation',
     gk: 'legislation',
@@ -24,10 +34,21 @@ const titles = {
     players: 'Игрокам',
     team: 'Руководство',
     play: 'Играть',
-    opp: 'Основные правила',
-    leaders: 'Правила лидеров',
-    gos: 'Правила государственных организаций',
-    krim: 'Правила криминальных организаций',
+    // Уровень 2
+    opp: 'Общие правила проекта',
+    pgo: 'Правила государственных структур',
+    pko: 'Правила криминальных структур',
+    // Уровень 3
+    pp: 'Правила Проекта',
+    piol: 'Правила и Обязанности Лидеров',
+    ps: 'Правила Семей',
+    pa: 'Правила Администрации',
+    opgs: 'Основные Правила Гос. Структур',
+    pd: 'Правила Допросов',
+    pr: 'Правила Рейдов',
+    opks: 'Основные Правила Крим. Структур',
+    pv: 'Правила Войны',
+    // Законодательство
     uk: 'Уголовный кодекс',
     ak: 'Административный кодекс',
     gk: 'Гражданский кодекс',
@@ -53,7 +74,7 @@ function showPage(hash) {
         if (home) home.classList.add('active');
     }
 
-    // Подсветка активной ссылки в меню (учитываем подстраницы через parentMap)
+    // Подсветка активной ссылки в верхнем меню
     const activeId = parentMap[id] || id;
 
     navLinks.forEach(link => {
