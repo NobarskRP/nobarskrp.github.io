@@ -187,14 +187,21 @@ main { min-height: 60vh; }
     display: flex; align-items: center; justify-content: center;
 }
 
-.about-card h3 { font-size: 15px; letter-spacing: 2px; color: #0f2557; font-weight: 800; margin-bottom: 6px; text-transform: uppercase; }
-
-.card-tag { font-size: 10px; letter-spacing: 2.5px; color: #dc2626; font-weight: 700; margin-bottom: 24px; }
+.about-card h3 {
+    font-size: 15px; letter-spacing: 2px; color: #0f2557;
+    font-weight: 800; margin-bottom: 24px; text-transform: uppercase;
+}
 
 .card-footer {
-    display: flex; justify-content: space-between; font-size: 9px;
-    letter-spacing: 1.5px; color: #9ca3af; padding-top: 16px;
-    border-top: 1px solid #e5e7eb; text-transform: uppercase;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    font-size: 9px; letter-spacing: 1.5px; color: #9ca3af;
+    padding-top: 16px; border-top: 1px solid #e5e7eb; text-transform: uppercase;
+}
+
+.card-footer .online {
+    color: #dc2626;
+    font-weight: 800;
+    letter-spacing: 1.5px;
 }
 
 /* ================= СЕТКА КАРТОЧЕК ================= */
