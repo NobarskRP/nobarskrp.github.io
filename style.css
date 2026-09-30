@@ -274,6 +274,41 @@ main { min-height: 60vh; }
 .faction-card.danger { border-color: #fee2e2; }
 .faction-card.danger:hover { border-color: #fecaca; box-shadow: 0 25px 50px -25px rgba(220, 38, 38, 0.3); }
 
+/* ================= ИКОНКА ФРАКЦИИ ================= */
+.faction-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    line-height: 1;
+    box-shadow: 0 10px 25px -10px rgba(15, 37, 87, 0.25);
+    border: 1px solid #dbeafe;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faction-card:hover .faction-icon {
+    transform: scale(1.08) rotate(-3deg);
+    box-shadow: 0 15px 30px -10px rgba(15, 37, 87, 0.35);
+}
+
+.faction-card.danger .faction-icon {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    border-color: #fecaca;
+    box-shadow: 0 10px 25px -10px rgba(220, 38, 38, 0.25);
+}
+
+.faction-card.danger:hover .faction-icon {
+    box-shadow: 0 15px 30px -10px rgba(220, 38, 38, 0.35);
+}
+
+.faction-card h4 { text-align: center; }
+.faction-card p { text-align: center; }
+
 .team-card { text-align: center; align-items: center; }
 
 .avatar {
@@ -787,4 +822,5 @@ main { min-height: 60vh; }
     .modal-box { padding: 34px 24px 26px; }
     .modal-title { font-size: 18px; }
     .modal-icon { width: 62px; height: 62px; font-size: 30px; }
+    .faction-icon { width: 60px; height: 60px; font-size: 30px; }
 }
